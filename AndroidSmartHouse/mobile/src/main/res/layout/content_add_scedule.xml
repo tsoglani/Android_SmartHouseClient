@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative_update"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".AddSceduleActivity"
+    tools:showIn="@layout/activity_add_scedule">
+
+
+    <Spinner
+        android:id="@+id/tab_command_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/textView2"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <!--<Button-->
+    <!--android:id="@+id/tab_edit_button"-->
+    <!--android:layout_width="50dp"-->
+    <!--android:layout_height="50dp"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_alignParentEnd="true"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_below="@+id/tab_delete_button"-->
+    <!--android:background="@drawable/notepad" />-->
+    <Spinner
+        android:id="@+id/deviceID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tab_command_text_view"
+        android:layout_alignStart="@+id/tab_command_text_view"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/device_id_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/deviceID"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/deviceID"
+        android:gravity="center"
+        android:text="Devide : ID"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+    <RelativeLayout
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_below="@+id/deviceID"
+        android:layout_toRightOf="@+id/textView4"
+        android:layout_toEndOf="@+id/textView4">
+
+        <Button
+            android:id="@+id/minus_hour"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/hour_text"
+            android:layout_toLeftOf="@+id/plus_minutes"
+            android:layout_toStartOf="@+id/plus_minutes"
+            android:onClick="minusHourFunction"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/hour_text"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/plus_hour"
+            android:gravity="center"
+            android:text="00"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Button
+            android:id="@+id/plus_hour"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:onClick="addHourFunction"
+            android:text="+" />
+
+        <Button
+            android:id="@+id/plus_minutes"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/plus_hour"
+            android:layout_alignTop="@+id/plus_hour"
+            android:layout_toEndOf="@+id/hour_text"
+            android:layout_toRightOf="@+id/hour_text"
+            android:onClick="addMinutesFunction"
+            android:text="+" />
+
+        <TextView
+            android:id="@+id/minutes_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/plus_minutes"
+            android:layout_alignLeft="@+id/plus_minutes"
+            android:layout_alignRight="@+id/plus_minutes"
+            android:layout_alignStart="@+id/plus_minutes"
+            android:layout_below="@+id/plus_minutes"
+            android:gravity="center"
+            android:text="00"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Button
+            android:id="@+id/minus_minutes"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignLeft="@+id/minutes_text"
+            android:layout_alignStart="@+id/minutes_text"
+            android:layout_below="@+id/minutes_text"
+            android:onClick="minusMinutesFunction"
+            android:text="-" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/sunday_tab"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/time"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/gray"
+        android:gravity="center"
+        android:onClick="chooseDayFunction"
+        android:text="S"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/monday_tab"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/time"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/sunday_tab"
+        android:layout_toRightOf="@+id/sunday_tab"
+        android:background="@color/gray"
+        android:gravity="center"
+        android:onClick="chooseDayFunction"
+        android:text="M"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/tuesday_tab"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/time"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/monday_tab"
+        android:layout_toRightOf="@+id/monday_tab"
+        android:background="@color/gray"
+        android:gravity="center"
+        android:onClick="chooseDayFunction"
+        android:text="T"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/wednesday_tab"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/time"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/tuesday_tab"
+        android:layout_toRightOf="@+id/tuesday_tab"
+        android:background="@color/gray"
+        android:gravity="center"
+        android:onClick="chooseDayFunction"
+        android:text="W"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/thursday_tab"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/wednesday_tab"
+        android:layout_marginLeft="10dp"
+        android:layout_toEndOf="@+id/wednesday_tab"
+        android:layout_toRightOf="@+id/wednesday_tab"
+        android:background="@color/gray"
+        android:gravity="center"
+        android:onClick="chooseDayFunction"
+        android:text="T"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/friday_tab"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/monday_tab"
+        android:layout_alignStart="@+id/monday_tab"
+        android:layout_below="@+id/monday_tab"
+        android:layout_marginTop="10dp"
+        android:background="@color/gray"
+        android:gravity="center"
+        android:layout_marginLeft="30dp"
+        android:onClick="chooseDayFunction"
+        android:text="F"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/saturday_tab"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/tuesday_tab"
+        android:layout_alignStart="@+id/tuesday_tab"
+        android:layout_alignTop="@+id/friday_tab"
+        android:background="@color/gray"
+        android:gravity="center"
+        android:layout_marginLeft="30dp"
+        android:onClick="chooseDayFunction"
+        android:text="S"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <CheckBox
+        android:id="@+id/weekly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/active"
+        android:checked="true"
+        android:text="Is weekly" />
+
+    <CheckBox
+        android:id="@+id/active"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/save"
+        android:layout_alignStart="@+id/save"
+        android:layout_below="@+id/deviceID"
+        android:checked="true"
+        android:text="Is active" />
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/cancel"
+        android:onClick="saveFunction"
+        android:text="Save" />
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="35dp"
+        android:onClick="goBack"
+        android:text="Cancel" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/device_id_text"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/device_id_text"
+        android:text="Choose Command"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="Time "
+        android:layout_marginTop="10dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_below="@+id/device_id_text"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/time" />
+
+
+</RelativeLayout>
