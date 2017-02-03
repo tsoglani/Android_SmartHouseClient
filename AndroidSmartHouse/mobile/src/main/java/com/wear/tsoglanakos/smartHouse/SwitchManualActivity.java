@@ -587,7 +587,7 @@ public class SwitchManualActivity extends AppCompatActivity {
 
         for (int i = 0; i < list.length; i++) {
             String textForEachSell = list[i];
-            if (textForEachSell.startsWith("unknown")) {
+            if (textForEachSell.equalsIgnoreCase("unknown device")) {
                 continue;
             }
 
@@ -639,7 +639,7 @@ public class SwitchManualActivity extends AppCompatActivity {
                                     }
                                 });
 
-                            } else if ((aSwitch.getText().toString()).startsWith(cutString)) {
+                            } else if ((aSwitch.getText().toString()).equals(cutString)) {
 
                                 final String parseToBool =(aSwitch.getText().toString()).substring(cutString.length(), (aSwitch.getText().toString()).length()).replaceAll(" ", "");
                                 runOnUiThread(new Thread() {
