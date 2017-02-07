@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -141,8 +142,10 @@ public class ConnectionHistory extends Activity {
             final LinearLayout showLayout = new LinearLayout(getApplicationContext());
             showLayout.setOrientation(LinearLayout.VERTICAL);
             TextView txtView1 = new TextView(getApplicationContext());
-            txtView1.setText("Enter Public ip");
-            ll.addView(txtView1);
+            txtView1.setText("Enter ip");
+            txtView1.setGravity(Gravity.CENTER_VERTICAL);
+            txtView1.setTextColor(Color.BLACK);
+            ll.addView(txtView1, new LinearLayout.LayoutParams(dpToPx(100), ViewGroup.LayoutParams.WRAP_CONTENT));
             ipInput.setGravity(Gravity.CENTER);
             ll.addView(ipInput);
             ipInput.setMinEms(10);
@@ -161,6 +164,8 @@ public class ConnectionHistory extends Activity {
             final LinearLayout ll2 = new LinearLayout(getApplicationContext());
             TextView txtView2 = new TextView(getApplicationContext());
             txtView2.setText("Computer's Name");
+            txtView2.setGravity(Gravity.CENTER_VERTICAL);
+            txtView2.setTextColor(Color.BLACK);
             usernameInput.setMinEms(10);
             ll2.addView(txtView2);
             usernameInput.setGravity(Gravity.CENTER);
@@ -170,6 +175,8 @@ public class ConnectionHistory extends Activity {
 
             TextView portText = new TextView(getApplicationContext());
             portText.setText("Enter port");
+            portText.setGravity(Gravity.CENTER_VERTICAL);
+            portText.setTextColor(Color.BLACK);
             final EditText portInput = new EditText(ConnectionHistory.this);
             portInput.setMinEms(10);
             portInput.setText(inputPort);
@@ -313,18 +320,16 @@ public class ConnectionHistory extends Activity {
             final CheckBox checkBox = new CheckBox(this);
             checkBox.setText("Save data.");
             checkBox.setChecked(true);
-
             showLayout.setOrientation(LinearLayout.VERTICAL);
             TextView txtView1 = new TextView(getApplicationContext());
-            txtView1.setText("Enter Public ip");
-
+            txtView1.setText("Enter ip");
+            txtView1.setGravity(Gravity.CENTER_VERTICAL);
+            txtView1.setTextColor(Color.BLACK);
             ll.addView(txtView1, new LinearLayout.LayoutParams(dpToPx(100), ViewGroup.LayoutParams.WRAP_CONTENT));
             ll.addView(ipInput);
             ipInput.setMinEms(10);
             ipInput.setGravity(Gravity.CENTER);
             final EditText usernameInput = new EditText(ConnectionHistory.this);
-
-
 //            usernameInput.setText(settings.getString("NickName", "").toString());
             usernameInput.setFocusable(true);
             usernameInput.setClickable(true);
@@ -335,6 +340,8 @@ public class ConnectionHistory extends Activity {
             final LinearLayout ll2 = new LinearLayout(getApplicationContext());
             TextView txtView2 = new TextView(getApplicationContext());
             txtView2.setText("Device Name");
+            txtView2.setGravity(Gravity.CENTER_VERTICAL);
+            txtView2.setTextColor(Color.BLACK);
             usernameInput.setMinEms(10);
             ll2.addView(txtView2, new LinearLayout.LayoutParams(dpToPx(100), ViewGroup.LayoutParams.WRAP_CONTENT));
             ll2.addView(usernameInput);
@@ -345,6 +352,8 @@ public class ConnectionHistory extends Activity {
 
             TextView portText = new TextView(getApplicationContext());
             portText.setText("Enter port");
+            portText.setGravity(Gravity.CENTER_VERTICAL);
+            portText.setTextColor(Color.BLACK);
             final EditText portInput = new EditText(ConnectionHistory.this);
             portInput.setMinEms(10);
             portInput.setText(Integer.toString(AutoConnection.port));
