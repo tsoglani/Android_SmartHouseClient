@@ -22,6 +22,7 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.ActionMode;
 import android.view.KeyEvent;
@@ -42,7 +43,7 @@ import com.yarolegovich.lovelydialog.LovelyInfoDialog;
 
 import org.apache.commons.lang3.StringUtils;
 
-public class SpeechActivity extends Activity {
+public class SpeechActivity extends AppCompatActivity {
 
     private TextView txtSpeechInput;
     private ImageButton btnSpeak;
@@ -392,7 +393,7 @@ public class SpeechActivity extends Activity {
     protected void onDestroy() {
         super.onDestroy();
         if (clientSocket != null) {
-            clientSocket.disconnect();
+//            clientSocket.disconnect();
             clientSocket.close();
             clientSocket = null;
         }

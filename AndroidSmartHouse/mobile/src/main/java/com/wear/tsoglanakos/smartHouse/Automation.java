@@ -128,7 +128,7 @@ public class Automation extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         if (clientSocket != null ) {
-            clientSocket.disconnect();
+//            clientSocket.disconnect();
             clientSocket.close();
             clientSocket=null;
         }

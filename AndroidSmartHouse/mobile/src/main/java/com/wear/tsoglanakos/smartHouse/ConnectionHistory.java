@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
@@ -30,7 +31,7 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
-public class ConnectionHistory extends Activity {
+public class ConnectionHistory extends AppCompatActivity {
     LinearLayout connection_history_linear;
     DB_connectionHistory db;
 
@@ -330,6 +331,7 @@ public class ConnectionHistory extends Activity {
             ipInput.setMinEms(10);
             ipInput.setGravity(Gravity.CENTER);
             final EditText usernameInput = new EditText(ConnectionHistory.this);
+            usernameInput.setText("home");
 //            usernameInput.setText(settings.getString("NickName", "").toString());
             usernameInput.setFocusable(true);
             usernameInput.setClickable(true);
@@ -609,8 +611,8 @@ public class ConnectionHistory extends Activity {
     protected void onStop() {
         super.onStop();
         if (clientSocket != null) {
-            clientSocket.disconnect();
-            clientSocket.close();
+//            clientSocket.disconnect();
+//            clientSocket.close();
             clientSocket=null;
         }
     }
@@ -631,8 +633,10 @@ public class ConnectionHistory extends Activity {
 
     @Override
     public void onBackPressed() {
-
-        startActivity(new Intent(ConnectionHistory.this, MainActivity.class));
+Intent intent=new Intent(ConnectionHistory.this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
 
     }
 

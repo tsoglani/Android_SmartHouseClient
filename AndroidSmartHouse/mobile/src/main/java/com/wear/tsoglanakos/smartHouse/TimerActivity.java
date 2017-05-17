@@ -91,7 +91,7 @@ public class TimerActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         if (clientSocket != null) {
-            clientSocket.disconnect();
+//            clientSocket.disconnect();
             clientSocket.close();
             clientSocket=null;
         }
@@ -105,7 +105,7 @@ public class TimerActivity extends AppCompatActivity {
     public void refreshFunction(View v) {
         toast("wait 3 seconds to receive data from device");
         if(clientSocket!=null)
-        clientSocket.disconnect();
+        clientSocket.close();
                         clientSocket=null;
         receiver();
 
@@ -212,13 +212,13 @@ Thread thread;
                     }catch (SocketException e){
                         e.printStackTrace();
                         if(clientSocket!=null)
-                        clientSocket.disconnect();
+                        clientSocket.close();
                         clientSocket=null;
                         break;
                     }catch (Exception|Error e) {
                         e.printStackTrace();
                         if(clientSocket!=null)
-                            clientSocket.disconnect();
+                            clientSocket.close();
                         clientSocket=null;
                         break;
                     }

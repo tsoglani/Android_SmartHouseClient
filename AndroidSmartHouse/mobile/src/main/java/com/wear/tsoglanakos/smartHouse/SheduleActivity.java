@@ -116,7 +116,7 @@ public class SheduleActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         if (clientSocket != null ) {
-            clientSocket.disconnect();
+//            clientSocket.disconnect();
             clientSocket.close();
             clientSocket=null;
         }

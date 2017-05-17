@@ -234,7 +234,7 @@ public class WearService extends WearableListenerService {
                         protected void onPostExecute(Void aVoid) {
                             isRunning = false;
                             if (clientSocket != null) {
-                                clientSocket.disconnect();
+//                                clientSocket.disconnect();
                                 clientSocket.close();
                                 clientSocket = null;
                             }
@@ -287,7 +287,7 @@ public class WearService extends WearableListenerService {
             thread.interrupt();
 //
             if (clientSocket != null) {
-                clientSocket.disconnect();
+//                clientSocket.disconnect();
                 clientSocket.close();
                 clientSocket = null;
             }
@@ -318,7 +318,7 @@ public class WearService extends WearableListenerService {
                                 if (async == this) {
                                     isRunning = false;
                                     if (clientSocket != null) {
-                                        clientSocket.disconnect();
+//                                        clientSocket.disconnect();
                                         clientSocket.close();
                                         clientSocket = null;
 
@@ -369,7 +369,7 @@ public class WearService extends WearableListenerService {
                     } catch (SocketTimeoutException e) {
                         isRunning = false;
                         if (clientSocket != null) {
-                            clientSocket.disconnect();
+//                            clientSocket.disconnect();
                             clientSocket.close();
                             clientSocket = null;
 
@@ -378,7 +378,7 @@ public class WearService extends WearableListenerService {
                     } catch (Exception e) {
 //                        isRunning = false;
                         if (clientSocket != null) {
-                            clientSocket.disconnect();
+//                            clientSocket.disconnect();
                             clientSocket.close();
                             clientSocket = null;
 
@@ -448,7 +448,7 @@ public class WearService extends WearableListenerService {
         super.onDestroy();
         isRunning = false;
         if (clientSocket != null) {
-            clientSocket.disconnect();
+            clientSocket.close();
             clientSocket = null;
         }
 //        service = null;

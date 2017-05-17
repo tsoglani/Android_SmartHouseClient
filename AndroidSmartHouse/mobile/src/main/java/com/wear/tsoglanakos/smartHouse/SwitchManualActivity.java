@@ -89,7 +89,7 @@ public class SwitchManualActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 isCommandMode = isChecked;
                 if (clientSocket != null) {
-                    clientSocket.disconnect();
+//                    clientSocket.disconnect();
                     clientSocket.close();
                     clientSocket = null;
                 }
@@ -439,7 +439,7 @@ public class SwitchManualActivity extends AppCompatActivity {
                             try {
                                 thread = null;
                                 if (clientSocket != null) {
-                                    clientSocket.disconnect();
+//                                    clientSocket.disconnect();
                                     clientSocket.close();
                                     clientSocket=null;
                                 }
@@ -679,7 +679,7 @@ public class SwitchManualActivity extends AppCompatActivity {
         isReceiving = false;
         switchActivity = null;
         if (clientSocket != null) {
-            clientSocket.disconnect();
+//            clientSocket.disconnect();
             clientSocket.close();
             clientSocket=null;
         }

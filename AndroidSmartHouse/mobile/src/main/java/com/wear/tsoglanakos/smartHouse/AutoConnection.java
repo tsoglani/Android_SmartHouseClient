@@ -131,20 +131,20 @@ public class AutoConnection {
 
 
 
-    public void connect(final String ip,String userName) {
-        try {
-            receiver();
-            new Thread(){
-                @Override
-                public void run() {
-                    super.run();
-                }
-            }.start();
-            sendData("globalReturning" + userName.replaceAll("!!!!!", ""), InetAddress.getByName(ip), AutoConnection.port);
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        }
-    }
+//    public void connect(final String ip,String userName) {
+//        try {
+//            receiver();
+//            new Thread(){
+//                @Override
+//                public void run() {
+//                    super.run();
+//                }
+//            }.start();
+//            sendData("globalReturning" + userName.replaceAll("!!!!!", ""), InetAddress.getByName(ip), AutoConnection.port);
+//        } catch (UnknownHostException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     public void connect(final String ip,String userName,String port) {
         try {

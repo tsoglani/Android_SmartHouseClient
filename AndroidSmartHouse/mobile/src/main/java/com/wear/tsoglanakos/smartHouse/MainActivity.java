@@ -11,6 +11,7 @@ import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
@@ -29,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
         generateUniqueUserID();
         AutoConnection.port = receiveInt("port", 2222);
+
+
+        Log.e("eeeeeeeee","oooooooo");
     }
 
     public void connectFunction(final View v) {
@@ -130,6 +134,8 @@ public class MainActivity extends AppCompatActivity {
     public void manualIPConnection(View v) {
         Intent intent=new Intent(MainActivity.this, ConnectionHistory.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
         startActivity(intent);
 
     }

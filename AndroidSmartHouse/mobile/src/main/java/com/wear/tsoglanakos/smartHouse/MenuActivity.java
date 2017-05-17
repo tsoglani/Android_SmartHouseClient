@@ -142,7 +142,7 @@ e.printStackTrace();
     protected void onStop() {
         super.onStop();
         if (clientSocket != null) {
-            clientSocket.disconnect();
+//            clientSocket.disconnect();
             clientSocket.close();
             clientSocket=null;
         }

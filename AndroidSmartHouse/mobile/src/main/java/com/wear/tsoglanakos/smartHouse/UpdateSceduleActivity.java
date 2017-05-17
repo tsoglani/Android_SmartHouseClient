@@ -145,7 +145,7 @@ public class UpdateSceduleActivity extends AppCompatActivity {
         super.onStop();
         isReceiving = false;
         if (clientSocket != null ) {
-            clientSocket.disconnect();
+//            clientSocket.disconnect();
             clientSocket.close();
             clientSocket=null;
         }
